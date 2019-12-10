@@ -27,7 +27,6 @@ const colors = {
   
   module.exports = {
     generateHTML: function (data, gitData) {
-      console.log("name: ", gitData.name);
       return `<!DOCTYPE html>
       <html lang="en">
       
@@ -37,7 +36,7 @@ const colors = {
           <meta http-equiv="X-UA-Compatible" content="ie=edge" />
           <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
           <link href="https://fonts.googleapis.com/css?family=BioRhyme|Cabin&display=swap" rel="stylesheet">
-          <title>Document</title>
+          <title>GitHub Profile Generator - PDF</title>
           <style>
               @page {
                   margin: 0;
@@ -210,9 +209,9 @@ const colors = {
                           <h2>My name is ${gitData.name}</h2>
                           <h5>Currently @ ${gitData.company}</h5>
                           <div class="link-nav">
-                              <a href="#" class="nav-link"><i class="fas fa-location-arrow"></i>${gitData.location}</a>
-                              <a href="${gitData.gitHubURL}" class="nav-link"><i class="fab fa-github fa-sm"></i>GitHub</a>
-                              <a href="${gitData.blogURL}" class="nav-link"><i class="fas fa-rss fa-sm"></i>Blog</a>
+                              <a href="https://www.google.com/maps?q=${gitData.location}" target="_blank" class="nav-link"><i class="fas fa-location-arrow"></i>${gitData.location}</a>
+                              <a href="${gitData.gitHubURL}" target="_blank" class="nav-link"><i class="fab fa-github fa-sm"></i>GitHub</a>
+                              <a href="${gitData.blogURL}" target="_blank" class="nav-link"><i class="fas fa-rss fa-sm"></i>Blog</a>
                           </div>
                       </div>
                   </div>
@@ -242,7 +241,7 @@ const colors = {
                   <div class="col">
                       <div class="card">
                           <h5>GitHub Stars</h5>
-                          <h5>gitData.stars</h5>
+                          <h5>${gitData.stars}</h5>
                       </div>
                   </div>
                   <div class="col">
